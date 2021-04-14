@@ -32,7 +32,7 @@
   <link rel="stylesheet" href="../static/css/style.css">
 </head>
 
-<body>
+<body style="background-color: #FFF;">
   <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
       <a class="navbar-brand" href="/"><img src="../static/images/cactus.png" width="17%" height="17%"> The_Cactii</a>
@@ -123,18 +123,17 @@
   
           <div class="col-lg-8 col-md-10 comment" style="padding-top: 5%;">
               {% for comment in post.comments: %}
-              <ul class="commentList">
-                  <li>
+              <div class="commentList row" style="display: flex; padding-bottom: 5%">
+                  
                       <div class="commenterImage">
-                        <img src="{{ comment.comment_author.email | gravatar }}"/>
+                        <img style="border-radius: 100%" src="{{ comment.comment_author.email | gravatar }}"/>
                       </div>
-                      <div class="commentText">
+                      <div class="commentText" style="padding-left: 3%;">
                           {{comment.text|safe}}
                           <span class="date sub-text"><em>{{comment.comment_author.name}}</em></span>
   
                       </div>
-                  </li>
-              </ul>
+                    </div>
               {% endfor %}
           </div>
         </div>
