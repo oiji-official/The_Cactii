@@ -39,7 +39,6 @@ pluggy==0.13.1
 psycopg2==2.8.6
 psycopg2-binary==2.8.6
 py==1.10.0
-PyAudio @ file:///C:/Users/xyzno/Downloads/PyAudio-0.2.11-cp39-cp39-win_amd64.whl
 pyjsparser==2.7.1
 PyJWT==1.7.1
 pylint==2.7.1
