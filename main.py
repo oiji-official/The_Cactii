@@ -14,16 +14,18 @@ from functools import wraps
 from datetime import date
 import requests
 import smtplib
+import os
 
-OWN_EMAIL = "leon.ate.the.sunflower.seeds@gmail.com"
-OWN_PASSWORD = "oiji@999"
+OWN_EMAIL = os.environ.get("OWN_EMAIL")
+OWN_PASSWORD = os.environ.get("OWN_PASSWORD")
 
 
 # posts = requests.get("https://api.npoint.io/f196852caaea93ffe048").json()
 # posts = requests.get("https://api.npoint.io/0ef751bda3b413f422aa").json()
+#'sqlite:///data.db'
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
+app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY")
 ckeditor = CKEditor(app)
 Bootstrap(app)
 gravatar = Gravatar(app, size=100, rating='g', default='retro', force_default=False, force_lower=False, use_ssl=False, base_url=None)
@@ -36,7 +38,7 @@ def load_user(user_id):
     return User.query.get(int(user_id))
 
 ##CONNECT TO DB
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
