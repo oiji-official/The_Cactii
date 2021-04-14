@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>The_Cactii</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:500,600,700&display=swap" rel="stylesheet">
+
+	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+	<link rel="stylesheet" href="static/css/open-iconic-bootstrap.min.css">
+	<link rel="stylesheet" href="static/css/animate.css">
+
+	<link rel="stylesheet" href="static/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="static/css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="static/css/magnific-popup.css">
+
+	<link rel="stylesheet" href="static/css/aos.css">
+
+	<link rel="stylesheet" href="static/css/ionicons.min.css">
+
+	<link rel="stylesheet" href="static/css/bootstrap-datepicker.css">
+	<link rel="stylesheet" href="static/css/jquery.timepicker.css">
+
+
+	<link rel="stylesheet" href="static/css/flaticon.css">
+	<link rel="stylesheet" href="static/css/icomoon.css">
+	<link rel="stylesheet" href="static/css/style.css">
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+		<div class="container">
+			<a class="navbar-brand" href="/"><img src="static/images/cactus.png" width="17%" height="17%">
+				The_Cactii</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+				aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="oi oi-menu"></span> Menu
+			</button>
+
+			<div class="collapse navbar-collapse" id="ftco-nav">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+					{% if not current_user.is_authenticated: %}
+					<li class="nav-item">
+						<a class="nav-link" href="{{ url_for('login') }}">Login</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{{ url_for('register') }}">Register</a>
+					</li>
+					{% else: %}
+					<li class="nav-item">
+						<a class="nav-link" href="{{ url_for('logout') }}">Log Out</a>
+					</li>
+					{% endif %}
+					<li class="nav-item active"><a href="/gallery" class="nav-link">Gallery</a></li>
+					<li class="nav-item"><a href="/about" class="nav-link">About</a></li>
+					<li class="nav-item"><a href="/blog" class="nav-link">Blog</a></li>
+					<li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!-- END nav -->
+
+	<section class="hero-wrap hero-wrap-2" style="background-image: url('static/images/metro.jfif');"
+		data-stellar-background-ratio="0.5">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
+				<div class="col-md-9 ftco-animate pb-5 text-center">
+					<h2 class="mb-0 bread">Gallery</h2>
+					<p class="breadcrumbs"><span class="mr-2"><a href="/">Home <i
+									class="ion-ios-arrow-round-forward"></i></a></span> <span>Gallery <i
+								class="ion-ios-arrow-round-forward"></i></span></p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="ftco-section ftco-no-pt ftco-no-pb">
+		<div class="container" id="moty">
+			<div class="row no-gutters justify-content-center mb-5 pb-2">
+				<div class="col-md-6 text-center heading-section ftco-animate">
+					<span class="subheading">Gallery</span>
+					<h2 class="mb-4">Top 10</h2>
+					<p>The most reviewed movies on our page such as Interstellar, Parasite, Chungking Express, Léon:The
+						Proffesional to name a few.</p>
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid p-0">
+			<div class="row no-gutters">
+				<div class="col-md-6 col-lg-3 ftco-animate">
+					<div class="project" style="width: auto; height: 420px">
+						<img src="static/images/chungking.jfif" class="img-fluid" alt="Cactii Template">
+						<div class="text">
+							<span>Chungking Express</span>
+							<h3><a href="#">8.9/10</a></h3>
+						</div>
+						<a href="static/images/chungking.jfif"
+							class="icon image-popup d-flex justify-content-center align-items-center">
+							<span class="icon-expand"></span>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-3 ftco-animate">
+					<div class="project" style="width: auto; height: 420px">
+						<img src="static/images/parasite.jfif" class="img-fluid" alt="Cactii Template">
+						<div class="text">
+							<span>Parasite</span>
+							<h3><a href="#">9.4/10</a></h3>
+						</div>
+						<a href="static/images/parasite.jfif"
+							class="icon image-popup d-flex justify-content-center align-items-center">
+							<span class="icon-expand"></span>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-3 ftco-animate">
+					<div class="project" style="width: auto; height: 420px">
+						<img src="static/images/interstellar.jfif" class="img-fluid" alt="Cactii Template">
+						<div class="text">
+							<span>Interstellar</span>
+							<h3><a href="#">9.0/10</a></h3>
+						</div>
+						<a href="static/images/interstellar.jfif"
+							class="icon image-popup d-flex justify-content-center align-items-center">
+							<span class="icon-expand"></span>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-3 ftco-animate">
+					<div class="project" style="width: auto; height: 420px">
+						<img src="static/images/fight.jfif" class="img-fluid" alt="Cactii Template">
+						<div class="text">
+							<span>Fight Club</span>
+							<h3><a href="#">8.5/10</a></h3>
+						</div>
+						<a href="static/images/fight.jfif"
+							class="icon image-popup d-flex justify-content-center align-items-center">
+							<span class="icon-expand"></span>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-3 ftco-animate">
+					<div class="project" style="width: auto; height: 420px">
+						<img src="static/images/lobster.jfif" class="img-fluid" alt="Cactii Template">
+						<div class="text">
+							<span>The Lobster</span>
+							<h3><a href="#">8.4/10</a></h3>
+						</div>
+						<a href="static/images/lobster.jfif"
+							class="icon image-popup d-flex justify-content-center align-items-center">
+							<span class="icon-expand"></span>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-3 ftco-animate">
+					<div class="project" style="width: auto; height: 420px">
+						<img src="static/images/shawshank.jfif" class="img-fluid" alt="Cactii Template">
+						<div class="text">
+							<span>Shawshank Redemption</span>
+							<h3><a href="#">8.9/10</a></h3>
+						</div>
+						<a href="static/images/shawshank.jfif"
+							class="icon image-popup d-flex justify-content-center align-items-center">
+							<span class="icon-expand"></span>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-3 ftco-animate">
+					<div class="project" style="width: auto; height: 420px">
+						<img src="static/images/memoir.png" class="img-fluid" alt="Cactii Template">
+						<div class="text">
+							<span>Memoirs of Murder</span>
+							<h3><a href="#">9.1/10</a></h3>
+						</div>
+						<a href="static/images/memoir.png"
+							class="icon image-popup d-flex justify-content-center align-items-center">
+							<span class="icon-expand"></span>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-3 ftco-animate">
+					<div class="project" style="width: auto; height: 420px">
+						<img src="static/images/sunshine.png" class="img-fluid" alt="Cactii Template">
+						<div class="text">
+							<span>Little Miss Sunshine</span>
+							<h3><a href="#">8.2/10</a></h3>
+						</div>
+						<a href="static/images/sunshine.png"
+							class="icon image-popup d-flex justify-content-center align-items-center">
+							<span class="icon-expand"></span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<footer class="ftco-footer ftco-section">
+		<div class="container">
+			<div class="row mb-5">
+				<div class="col-md">
+					<div class="ftco-footer-widget mb-4">
+						<h2 class="ftco-heading-2 logo">The_Cactii</h2>
+						<p>A site which renders critic reviews of all genre of art films.</p>
+						<ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+							<li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+							<li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+							<li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md">
+					<div class="ftco-footer-widget mb-4 ml-md-5">
+						<h2 class="ftco-heading-2">Information</h2>
+						<ul class="list-unstyled">
+							<li><a href="#" class="py-2 d-block">FAQs</a></li>
+							<li><a href="#" class="py-2 d-block">Privacy</a></li>
+							<li><a href="#" class="py-2 d-block">Terms Condition</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md">
+					<div class="ftco-footer-widget mb-4">
+						<h2 class="ftco-heading-2">Links</h2>
+						<ul class="list-unstyled">
+							<li><a href="/" class="py-2 d-block">Home</a></li>
+							<li><a href="/about" class="py-2 d-block">About</a></li>
+							<li><a href="/gallery" class="py-2 d-block">Gallery</a></li>
+							<li><a href="/blog" class="py-2 d-block">Blog</a></li>
+							<li><a href="/contact" class="py-2 d-block">Contact</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md">
+					<div class="ftco-footer-widget mb-4">
+						<h2 class="ftco-heading-2">Have a Question?</h2>
+						<div class="block-23 mb-3">
+							<ul>
+								<li><span class="icon icon-map-marker"></span><span class="text">Delhi, India</span>
+								</li>
+								<li><a href="#"><span class="icon icon-phone"></span><span class="text">+91 992 3929
+											210</span></a></li>
+								<li><a href="/contact"><span class="icon icon-envelope"></span><span
+											class="text">info@cactii_domain.com</span></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 text-center">
+
+					<p>
+						Copyright &copy;
+						<script>document.write(new Date().getFullYear());</script> | All rights reserved
+					</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+
+	<!-- loader -->
+	<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+			<circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+			<circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+				stroke="#F96D00" />
+		</svg></div>
+
+
+	<script src="static/js/jquery.min.js"></script>
+	<script src="static/js/jquery-migrate-3.0.1.min.js"></script>
+	<script src="static/js/popper.min.js"></script>
+	<script src="static/js/bootstrap.min.js"></script>
+	<script src="static/js/jquery.easing.1.3.js"></script>
+	<script src="static/js/jquery.waypoints.min.js"></script>
+	<script src="static/js/jquery.stellar.min.js"></script>
+	<script src="static/js/owl.carousel.min.js"></script>
+	<script src="static/js/jquery.magnific-popup.min.js"></script>
+	<script src="static/js/aos.js"></script>
+	<script src="static/js/jquery.animateNumber.min.js"></script>
+	<script src="static/js/bootstrap-datepicker.js"></script>
+	<script src="static/js/jquery.timepicker.min.js"></script>
+	<script src="static/js/scrollax.min.js"></script>
+	<script
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+	<script src="static/js/google-map.js"></script>
+	<script src="static/js/main.js"></script>
+
+</body>
+
+</html>
