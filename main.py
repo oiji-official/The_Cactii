@@ -16,7 +16,7 @@ import requests
 import smtplib
 import os
 
-OWN_EMAIL = os.environ.get("OWN_EMAIL")
+OWN_EMAIL = "leon.ate.the.sunflower.seeds@gmail.com"
 OWN_PASSWORD = os.environ.get("OWN_PASSWORD")
 
 
