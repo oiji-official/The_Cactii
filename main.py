@@ -105,7 +105,7 @@ class Comment(db.Model):
     parent_post = relationship("BlogPost", back_populates="comments")
     
 # Create all the tables in the database
-db.create_all()
+db.init_app()
 
 #Create admin-only decorator
 def admin_only(f):
