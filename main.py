@@ -17,7 +17,7 @@ import smtplib
 import os
 
 OWN_EMAIL = "leon.ate.the.sunflower.seeds@gmail.com"
-OWN_PASSWORD = os.environ.get("OWN_PASSWORD")
+OWN_PASSWORD = "oiji@999"
 
 
 # posts = requests.get("https://api.npoint.io/f196852caaea93ffe048").json()
