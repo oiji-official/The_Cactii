@@ -38,7 +38,7 @@ def load_user(user_id):
     return User.query.get(int(user_id))
 
 ##CONNECT TO DB
-db_url = os.environ.get('DATABASE_URL')
+db_url = os.environ.get('DATABASE_URL', "sqlite:///data.db")
 if 'postgres://' in db_url:
     db_url = db_url.replace("postgres://", "postgresql://")
 
@@ -82,7 +82,7 @@ class BlogPost(db.Model):
     id = db.Column(db.Integer, primary_key=True)
 
     #Create Foreign Key, "users.id" the users refers to the tablename of User.
-    author_id = db.Column(db.String(250), db.ForeignKey("users.id"))
+    author_id = db.Column(db.Integer, db.ForeignKey("users.id"))
     #Create reference to the User object, the "posts" refers to the posts protperty in the User class.
     author = relationship("User", back_populates="posts")
     comments = relationship("Comment", back_populates="parent_post")
